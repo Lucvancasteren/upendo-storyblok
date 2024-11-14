@@ -85,8 +85,7 @@ export default function HeaderComponent({ blok = {
             </>
           )}
         </ul>
-
-  
+        
       </nav>
     </header>
   );
