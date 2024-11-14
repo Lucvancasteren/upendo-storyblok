@@ -45,7 +45,7 @@
     "**/**/*.js",
     "**/**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "components/header.jsx"  ],
   "exclude": [
     "node_modules"
   ]

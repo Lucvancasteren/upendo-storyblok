@@ -500,14 +500,17 @@ video {
 .mr-2 {
   margin-right: 0.5rem;
 }
+.mt-5 {
+  margin-top: 1.25rem;
+}
 .flex {
   display: flex;
 }
-.h-full {
-  height: 100%;
-}
 .h-12 {
   height: 3rem;
+}
+.h-full {
+  height: 100%;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -517,6 +520,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-\[95vw\] {
+  width: 95vw;
 }
 .flex-1 {
   flex: 1 1 0%;

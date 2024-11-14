@@ -1,23 +1,31 @@
-'use client' // Zorgt ervoor dat de component als client-side component wordt gerenderd in Next.js
+// Zorgt ervoor dat de component als client-side component wordt gerenderd in Next.js
+'use client'
 
-import * as React from "react" // Importeert de React-bibliotheek om React-functionaliteit te gebruiken
-import Link from "next/link" // Importeert de Link-component van Next.js voor interne navigatie
+import { storyblokEditable } from "@storyblok/react/rsc";
+import * as React from "react"; // Importeert de React-bibliotheek om React-functionaliteit te gebruiken
+import Link from "next/link"; // Importeert de Link-component van Next.js voor interne navigatie
 
-// Exporteert de Component functie, die de Header component is
-export default function Component({ blok = { 
-  // Default blok-object met voorbeeldgegevens voor logo en navigatielinks
-  logo: { filename: '/placeholder.svg?height=96&width=96' }, // Plaatshouder voor het logo met hoogte/breedte parameters
+const header = ({ blok }) => (
+  <div className="Artikelen_header" {...storyblokEditable(blok)}>
+    <h1 className="Artikelen_titel">{blok.artikelen_titel}</h1>
+    <img className="w-[95vw] mt-5" src={blok.Artikelen_lijn.filename} alt="Artikelen lijn" />
+  </div>
+);
+
+export default function HeaderComponent({ blok = {
+  logo: { filename: '/placeholder.svg?height=96&width=96' }, // Plaatshouder voor het logo
   nav_links: [
-    { url: { url: '#' }, label: 'Home' }, // Eerste navigatielink voor "Home"
-    { url: { url: '#' }, label: 'About' }, // Tweede navigatielink voor "About"
-    { url: { url: '#' }, label: 'Services' }, // Derde navigatielink voor "Services"
-    { url: { url: '#' }, label: 'Contact' } // Vierde navigatielink voor "Contact"
-  ] 
+    { url: { url: '#' }, label: 'Home' },
+    { url: { url: '#' }, label: 'About' },
+    { url: { url: '#' }, label: 'Services' },
+    { url: { url: '#' }, label: 'Contact' }
+  ],
+  artikelen_titel: 'Welkom bij Artikelen', // Default titel
+  Artikelen_lijn: { filename: '/placeholder-line.svg' } // Plaatshouder voor een lijnafbeelding
 }}) {
   return (
     <header className="bg-[#002626] text-white"> {/* Header-sectie met achtergrondkleur en tekstkleur ingesteld */}
       <nav className="w-full flex items-center justify-between p-2 sm:p-4"> {/* Nav-sectie die flex gebruikt voor uitlijning */}
-        
         {blok.logo && ( // Checkt of er een logo is, als dat het geval is, rendert het de afbeelding
           <img
             src={blok.logo.filename} // De bron van de afbeelding, ingesteld op het logo-pad
@@ -38,6 +46,8 @@ export default function Component({ blok = {
           ))}
         </div>
       </nav>
+      {/* Artikelen header sectie */}
+      <header blok={blok} />
     </header>
-  )
+  );
 }
