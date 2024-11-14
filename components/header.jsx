@@ -1,53 +1,91 @@
-// Zorgt ervoor dat de component als client-side component wordt gerenderd in Next.js
 'use client'
 
 import { storyblokEditable } from "@storyblok/react/rsc";
-import * as React from "react"; // Importeert de React-bibliotheek om React-functionaliteit te gebruiken
-import Link from "next/link"; // Importeert de Link-component van Next.js voor interne navigatie
+import * as React from "react";
+import Link from "next/link";
 
 const header = ({ blok }) => (
   <div className="Artikelen_header" {...storyblokEditable(blok)}>
-    <h1 className="Artikelen_titel">{blok.artikelen_titel}</h1>
+    <h1 className="Artikelen_titel" style={{ fontFamily: 'Area Normal', fontWeight: '300' }}>{blok.artikelen_titel}</h1>
     <img className="w-[95vw] mt-5" src={blok.Artikelen_lijn.filename} alt="Artikelen lijn" />
   </div>
 );
 
 export default function HeaderComponent({ blok = {
-  logo: { filename: '/placeholder.svg?height=96&width=96' }, // Plaatshouder voor het logo
+  logo: { filename: '/placeholder.svg?height=96&width=96' },
   nav_links: [
     { url: { url: '#' }, label: 'Home' },
-    { url: { url: '#' }, label: 'About' },
+    { url: { url: '#' }, label: 'About us' },
     { url: { url: '#' }, label: 'Services' },
-    { url: { url: '#' }, label: 'Contact' }
+    { url: { url: '#' }, label: 'Pricing' },
+    { url: { url: '#' }, label: 'Training' }
   ],
-  artikelen_titel: 'Welkom bij Artikelen', // Default titel
-  Artikelen_lijn: { filename: '/placeholder-line.svg' } // Plaatshouder voor een lijnafbeelding
+  artikelen_titel: 'Welkom bij Artikelen',
+  Artikelen_lijn: { filename: '/placeholder-line.svg' }
 }}) {
   return (
-    <header className="bg-[#002626] text-white"> {/* Header-sectie met achtergrondkleur en tekstkleur ingesteld */}
-      <nav className="w-full flex items-center justify-between p-2 sm:p-4"> {/* Nav-sectie die flex gebruikt voor uitlijning */}
-        {blok.logo && ( // Checkt of er een logo is, als dat het geval is, rendert het de afbeelding
+    <header className="bg-[#002626] text-white h-[100px] flex items-center justify-center px-4"> {/* Flexbox voor centrering */}
+      <nav className="flex items-center justify-center w-full">
+        {/* Logo aan de linkerzijde */}
+        {blok.logo && (
           <img
-            src={blok.logo.filename} // De bron van de afbeelding, ingesteld op het logo-pad
-            alt="Logo" // Alternatieve tekst voor de afbeelding
-            className="h-12 w-12 sm:h-29 sm:w-29 object-contain mr-2 sm:mr-4 ml-4 sm:ml-4" // Klasse voor responsieve grootte en marges
+            src={blok.logo.filename}
+            alt="Logo"
+            className="absolute left-10 object-contain"
+            style={{ height: '', width: 'auto', maxHeight: '40px' }}
           />
         )}
-
-        <div className="flex-1 flex flex-wrap justify-start space-x-2 sm:space-x-4 ml-2 sm:ml-4"> {/* Container voor navigatielinks */}
-          {blok.nav_links?.slice(0, 4).map((link, index) => ( // Itereert door de eerste vier navigatielinks
-            <Link
-              key={index} // Unieke key voor elke link, gebaseerd op de index
-              href={link.url.url} // URL waar de link naar verwijst
-              className="text-sm sm:text-lg font-semibold hover:underline py-1 sm:py-2" // Stijlen voor tekstgrootte, dikte en hover-effect
-            >
-              {link.label} {/* De tekst van de navigatielink */}
-            </Link>
-          ))}
-        </div>
+        {/* Navigatiewoorden in het midden */}
+        <ul className="flex flex-row text-white gap-12 justify-center items-center">
+          {Array.isArray(blok.nav_links) ? (
+            blok.nav_links.map((link, index) => (
+              <li key={index} style={{ fontWeight: '300' }}>
+                <Link
+                  href={link.url.url}
+                  className="hover:text-[#F4C5FF] transition-colors duration-300"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))
+          ) : (
+            <>
+              <li style={{ fontWeight: '300' }}>
+                <Link
+                  href="/about-us"
+                  className="hover:text-[#F4C5FF] transition-colors duration-300"
+                >
+                  about us
+                </Link>
+              </li>
+              <li style={{ fontWeight: '300' }}>
+                <Link
+                  href="/services"
+                  className="hover:text-[#F4C5FF] transition-colors duration-300"
+                >
+                  services
+                </Link>
+              </li>
+              <li style={{ fontWeight: '300' }}>
+                <Link
+                  href="/pricing"
+                  className="hover:text-[#F4C5FF] transition-colors duration-300"
+                >
+                  pricing
+                </Link>
+              </li>
+              <li style={{ fontWeight: '300' }}>
+                <Link
+                  href="/training"
+                  className="hover:text-[#F4C5FF] transition-colors duration-300"
+                >
+                  training
+                </Link>
+              </li>
+            </>
+          )}
+        </ul>
       </nav>
-      {/* Artikelen header sectie */}
-      <header blok={blok} />
     </header>
   );
 }

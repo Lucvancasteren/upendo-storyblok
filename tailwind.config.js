@@ -4,6 +4,10 @@ module.exports = {
     aspectRatio: false,
   },
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'area-normal': ['"Area Normal"', 'sans-serif'], // Voeg het Area Normal lettertype toe
+      },
+    },
   },
 };
