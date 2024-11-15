@@ -1,8 +1,9 @@
-'use client'
+'use client';
 
 import { storyblokEditable } from "@storyblok/react/rsc";
 import * as React from "react";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Navbar({ blok = {
   logo: { filename: '/placeholder.svg?height=96&width=96' },
@@ -16,20 +17,24 @@ export default function Navbar({ blok = {
   artikelen_titel: 'Welkom bij Artikelen',
   Artikelen_lijn: { filename: '/placeholder-line.svg' }
 }}) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="bg-[#002626] text-white h-[100px] flex items-center justify-center px-4"> {/* Flexbox voor centrering */}
-      <nav className="flex items-center justify-center w-full">
+    <header className="bg-[#002626] text-white h-[100px] flex items-center justify-between px-4"> 
+      <nav className="flex items-center justify-between w-full">
         {/* Logo aan de linkerzijde */}
         {blok.logo && (
           <img
             src={blok.logo.filename}
             alt="Logo"
-            className="absolute left-10 object-contain"
-            style={{ height: '', width: 'auto', maxHeight: '40px' }}
+            className="object-contain h-[24px] sm:h-[32px] md:h-[36px] lg:h-[40px]"
           />
         )}
-        {/* Navigatiewoorden in het midden */}
-        <ul className="flex flex-row text-white gap-12 justify-center items-center">
+
+        {/* Navigatiewoorden */}
+        <ul
+          className={`flex flex-col lg:flex-row text-white gap-6 lg:gap-12 justify-center items-center absolute lg:static top-[100px] left-[40%] transform -translate-x-[40%] w-full lg:w-auto bg-[#002626] lg:bg-transparent transition-all duration-300 ease-in-out ${menuOpen ? 'block' : 'hidden'} lg:flex`}
+        >
           {Array.isArray(blok.nav_links) ? (
             blok.nav_links.map((link, index) => (
               <li key={index} style={{ fontWeight: '300' }}>
@@ -78,7 +83,38 @@ export default function Navbar({ blok = {
             </>
           )}
         </ul>
-        
+
+        {/* Hamburger menu */}
+        <div className="lg:hidden">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-white focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {menuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
       </nav>
     </header>
   );
