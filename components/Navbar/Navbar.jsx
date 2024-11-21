@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { storyblokEditable } from "@storyblok/react/rsc";
 import * as React from "react";
@@ -9,23 +9,23 @@ import { Search, User } from "lucide-react";
 
 export default function Navbar({
   blok = {
-    logo: { filename: '/placeholder.svg?height=96&width=96' },
+    logo: { filename: "/placeholder.svg?height=96&width=96" },
     nav_links: [
-      { url: { url: '#' }, label: 'About us' },
-      { url: { url: '#' }, label: 'Services' },
-      { url: { url: '#' }, label: 'Pricing' },
-      { url: { url: '#' }, label: 'Training' },
+      { url: { url: "#" }, label: "About us" },
+      { url: { url: "#" }, label: "Services" },
+      { url: { url: "#" }, label: "Pricing" },
+      { url: { url: "#" }, label: "Training" },
     ],
-    artikelen_titel: 'Welkom bij Artikelen',
-    Artikelen_lijn: { filename: '/placeholder-line.svg' },
+    artikelen_titel: "Welkom bij Artikelen",
+    Artikelen_lijn: { filename: "/placeholder-line.svg" },
     contactbutton: true,
-    flag: { filename: '/flag1.svg' },
-    flagDutch: { filename: '/flagDutch.svg' },
-    user: { filename: '/user-placeholder.svg?height=32&width=32' },
+    flag: { filename: "/flag1.svg" },
+    flagDutch: { filename: "/flagDutch.svg" },
+    user: { filename: "/user-placeholder.svg?height=32&width=32" },
   },
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [flagSrc, setFlagSrc] = useState('/placeholder.svg'); // Fallback initialisatie
+  const [flagSrc, setFlagSrc] = useState("/placeholder.svg"); // Fallback initialisatie
   const [searchOpen, setSearchOpen] = useState(false);
 
   // Bijwerken van flagSrc zodra blok.flag.filename beschikbaar is
@@ -37,7 +37,9 @@ export default function Navbar({
 
   const toggleFlag = () => {
     setFlagSrc((prevSrc) =>
-      prevSrc === blok.flag.filename ? blok.flagDutch.filename : blok.flag.filename
+      prevSrc === blok.flag.filename
+        ? blok.flagDutch.filename
+        : blok.flag.filename
     );
   };
 
@@ -63,24 +65,24 @@ export default function Navbar({
           {/* Navigatiewoorden */}
           <ul
             className={`fixed lg:static top-0 left-0 w-full h-full bg-[#002626] text-white flex flex-col lg:flex-row gap-6 lg:gap-12 justify-start lg:justify-center items-start lg:items-center transition-transform duration-300 ease-in-out ${
-              menuOpen ? 'translate-y-0' : '-translate-y-full'
+              menuOpen ? "translate-y-0" : "-translate-y-full"
             } lg:translate-y-0`}
-            style={{ zIndex: 10, paddingTop: menuOpen ? '250px' : '0' }}
+            style={{ zIndex: 10, paddingTop: menuOpen ? "250px" : "0" }}
           >
             {Array.isArray(blok.nav_links) ? (
               blok.nav_links.map((link, index) => (
                 <li
                   key={index}
                   className={`font-light px-6 lg:px-0 lg:text-center text-left ${
-                    menuOpen ? '' : ''
+                    menuOpen ? "" : ""
                   }`}
                 >
                   <Link
                     href={link.url.url}
                     className={`transition-colors duration-300 ${
                       menuOpen
-                        ? 'bg-gradient-to-r from-[#EAFFBD] to-[#F4C5FF] text-transparent bg-clip-text'
-                        : 'hover:text-[#F4C5FF]'
+                        ? "bg-gradient-to-r from-[#EAFFBD] to-[#F4C5FF] text-transparent bg-clip-text"
+                        : "hover:text-[#F4C5FF]"
                     }`}
                   >
                     {link.label}
@@ -126,7 +128,10 @@ export default function Navbar({
           </ul>
 
           {/* Contact Button, Search, Flag, and Hamburger menu */}
-          <div className="flex items-center ml-auto space-x-4" style={{ zIndex: 20 }}>
+          <div
+            className="flex items-center ml-auto space-x-4"
+            style={{ zIndex: 20 }}
+          >
             {blok.contactbutton && (
               <div className="hidden lg:flex items-center space-x-4">
                 <button
@@ -210,7 +215,7 @@ export default function Navbar({
       {/* Search bar */}
       <div
         className={`absolute top-[100px] left-0 w-full bg-[#002626] transition-all duration-300 ease-in-out ${
-          searchOpen ? 'h-16 opacity-100' : 'h-0 opacity-0'
+          searchOpen ? "h-16 opacity-100" : "h-0 opacity-0"
         } overflow-hidden`}
       >
         <div className="max-w-[1440px] mx-auto px-4 h-full flex items-center">
@@ -220,7 +225,7 @@ export default function Navbar({
             className="w-full bg-transparent border-b border-white text-white placeholder-gray-400 focus:outline-none"
             aria-label="Search"
           />
-        </div>  
+        </div>
       </div>
     </header>
   );
