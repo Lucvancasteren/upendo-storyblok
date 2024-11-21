@@ -4,8 +4,8 @@ import { storyblokEditable } from "@storyblok/react/rsc";
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { Search, User } from "lucide-react";
+import { useState } from "react";
+import { Search, User } from 'lucide-react';
 
 export default function Navbar({
   blok = {
@@ -25,15 +25,8 @@ export default function Navbar({
   },
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [flagSrc, setFlagSrc] = useState('/placeholder.svg'); // Fallback initialisatie
+  const [flagSrc, setFlagSrc] = useState(blok.flag.filename);
   const [searchOpen, setSearchOpen] = useState(false);
-
-  // Bijwerken van flagSrc zodra blok.flag.filename beschikbaar is
-  useEffect(() => {
-    if (blok.flag?.filename) {
-      setFlagSrc(blok.flag.filename);
-    }
-  }, [blok.flag]);
 
   const toggleFlag = () => {
     setFlagSrc((prevSrc) =>
@@ -47,7 +40,7 @@ export default function Navbar({
 
   return (
     <header className="bg-[#002626] text-white h-[100px]">
-      <div className="max-w-[1800px] mx-auto px-4 h-full">
+      <div className="max-w-[1440px] mx-auto px-4 h-full">
         <nav className="grid grid-cols-[auto_1fr_auto] items-center h-full">
           {/* Logo aan de linkerzijde */}
           <div className="flex-shrink-0 ml-4">
@@ -213,7 +206,7 @@ export default function Navbar({
           searchOpen ? 'h-16 opacity-100' : 'h-0 opacity-0'
         } overflow-hidden`}
       >
-        <div className="max-w-[1800px] mx-auto px-4 h-full flex items-center">
+        <div className="max-w-[1440px] mx-auto px-4 h-full flex items-center">
           <input
             type="text"
             placeholder="Search..."
@@ -221,7 +214,7 @@ export default function Navbar({
             aria-label="Search"
           />
         </div>  
-      </div>
-    </header>
-  );
+    </div>
+  </header>
+  )
 }
