@@ -1,4 +1,4 @@
-// File: /Users/luc/Documents/Semester 3/git/upendo-storyblok/app/layout.tsx
+// File: /Users/idil/Documents/GitHub/upendo-storyblok/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
