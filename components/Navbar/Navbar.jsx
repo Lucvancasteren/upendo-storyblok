@@ -4,8 +4,8 @@ import { storyblokEditable } from "@storyblok/react/rsc";
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import { Search, User } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Search, User } from "lucide-react";
 
 export default function Navbar({
   blok = {
@@ -25,8 +25,15 @@ export default function Navbar({
   },
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [flagSrc, setFlagSrc] = useState(blok.flag.filename);
+  const [flagSrc, setFlagSrc] = useState('/placeholder.svg'); // Fallback initialisatie
   const [searchOpen, setSearchOpen] = useState(false);
+
+  // Bijwerken van flagSrc zodra blok.flag.filename beschikbaar is
+  useEffect(() => {
+    if (blok.flag?.filename) {
+      setFlagSrc(blok.flag.filename);
+    }
+  }, [blok.flag]);
 
   const toggleFlag = () => {
     setFlagSrc((prevSrc) =>
@@ -214,7 +221,7 @@ export default function Navbar({
             aria-label="Search"
           />
         </div>  
-    </div>
-  </header>
-  )
+      </div>
+    </header>
+  );
 }
