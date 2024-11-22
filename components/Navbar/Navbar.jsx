@@ -61,6 +61,7 @@ export default function Navbar({
           </div>
 
           {/* Navigatiewoorden */}
+          <p>Pim</p>
           <ul
             className={`fixed lg:static top-0 left-0 w-full h-full bg-[#002626] text-white flex flex-col lg:flex-row gap-6 lg:gap-12 justify-start lg:justify-center items-start lg:items-center transition-transform duration-300 ease-in-out ${
               menuOpen ? 'translate-y-0' : '-translate-y-full'
