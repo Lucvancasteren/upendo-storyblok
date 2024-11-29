@@ -11,7 +11,7 @@ export default function Navbar({
   blok = {
     logo: { filename: '/placeholder.svg?height=96&width=96' },
     nav_links: [
-      { url: { url: '#' }, label: 'About us' },
+      { url: { url: '#' }, label: 'About' },
       { url: { url: '#' }, label: 'Services' },
       { url: { url: '#' }, label: 'Pricing' },
       { url: { url: '#' }, label: 'Training' },
