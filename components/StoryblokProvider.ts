@@ -10,6 +10,7 @@ import Feature from "./Feature/Feature";
 import ThreeQuarterLayout from "./ThreeQuarterLayout/ThreeQuarterLayout";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
+import AboutUs_hero from "./AboutUs_hero/AboutUs_hero";
 
 const components = {
   page: Page,
@@ -17,6 +18,7 @@ const components = {
   threequarterlayout: ThreeQuarterLayout,
   navbar: Navbar,
   Footer: Footer,
+  AboutUs_hero: AboutUs_hero,
 };
 
 storyblokInit({
