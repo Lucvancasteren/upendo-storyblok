@@ -488,6 +488,39 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
+}
 .fixed {
   position: fixed;
 }
@@ -521,6 +554,21 @@ video {
 }
 .mr-2 {
   margin-right: 0.5rem;
+}
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
+}
+.mt-20 {
+  margin-top: 5rem;
+}
+.mt-5 {
+  margin-top: 1.25rem;
+}
+.mt-\[80px\] {
+  margin-top: 80px;
 }
 .inline-block {
   display: inline-block;
@@ -561,6 +609,18 @@ video {
 .h-full {
   height: 100%;
 }
+.h-9 {
+  height: 2.25rem;
+}
+.h-\[125px\] {
+  height: 125px;
+}
+.h-\[350px\] {
+  height: 350px;
+}
+.h-\[600px\] {
+  height: 600px;
+}
 .w-5 {
   width: 1.25rem;
 }
@@ -572,6 +632,27 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-\[100\%\] {
+  width: 100%;
+}
+.w-\[100vw\] {
+  width: 100vw;
+}
+.w-\[1150px\] {
+  width: 1150px;
+}
+.w-\[125px\] {
+  width: 125px;
+}
+.w-\[40\%\] {
+  width: 40%;
+}
+.w-\[400px\] {
+  width: 400px;
+}
+.w-\[700px\] {
+  width: 700px;
 }
 .max-w-\[1440px\] {
   max-width: 1440px;
@@ -593,6 +674,9 @@ video {
 .grid-cols-\[auto_1fr_auto\] {
   grid-template-columns: auto 1fr auto;
 }
+.flex-row {
+  flex-direction: row;
+}
 .flex-col {
   flex-direction: column;
 }
@@ -604,6 +688,12 @@ video {
 }
 .justify-start {
   justify-content: flex-start;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
 }
 .gap-6 {
   gap: 1.5rem;
@@ -627,6 +717,10 @@ video {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
+.rounded-b-full {
+  border-bottom-right-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+}
 .border-b {
   border-bottom-width: 1px;
 }
@@ -645,6 +739,10 @@ video {
 .bg-transparent {
   background-color: transparent;
 }
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -656,13 +754,26 @@ video {
 .to-\[\#F4C5FF\] {
   --tw-gradient-to: #F4C5FF var(--tw-gradient-to-position);
 }
+.bg-cover {
+  background-size: cover;
+}
 .bg-clip-text {
   -webkit-background-clip: text;
           background-clip: text;
 }
+.bg-center {
+  background-position: center;
+}
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
+}
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.p-6 {
+  padding: 1.5rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -678,6 +789,10 @@ video {
 }
 .text-left {
   text-align: left;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 .font-light {
   font-weight: 300;
@@ -695,6 +810,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-\[\#EAFFBD\] {
+  --tw-text-opacity: 1;
+  color: rgb(234 255 189 / var(--tw-text-opacity));
 }
 .placeholder-gray-400::-moz-placeholder {
   --tw-placeholder-opacity: 1;
@@ -722,6 +841,13 @@ video {
 }
 .transition-transform {
   transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -758,6 +884,11 @@ video {
 
   .lg\:static {
     position: static;
+  }
+
+  .lg\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .lg\:flex {
