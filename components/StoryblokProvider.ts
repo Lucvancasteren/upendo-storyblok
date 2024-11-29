@@ -9,12 +9,16 @@ import Page from "./page.component";
 import Feature from "./Feature/Feature";
 import ThreeQuarterLayout from "./ThreeQuarterLayout/ThreeQuarterLayout";
 import Navbar from "./Navbar/Navbar";
+import PricingHeader from "./Pricing/PricingHeader";
+import PricingCards from "./Pricing/PricingCards";
 
 const components = {
   page: Page,
   feature: Feature,
   threequarterlayout: ThreeQuarterLayout,
   navbar: Navbar,
+  pricingheader: PricingHeader,
+  pricingcards: PricingCards,
 };
 
 storyblokInit({
