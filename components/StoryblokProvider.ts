@@ -15,7 +15,8 @@ import ourValues from "./ourValues/ourValues";
 import CallToAction_1 from "./CallToAction_1/CallToAction_1";
 import PricingHeader from "./Pricing/PricingHeader";
 import PricingCards from "./Pricing/PricingCards";
-import weworkedwith_slider from "./WeWorkedWith/weworkedwith_slider"
+import weworkedwith_slider from "./WeWorkedWith/weworkedwith_slider";
+import OurTeamCaroussel from "./OurTeamCaroussel/OurTeamCaroussel";
 
 const components = {
   page: Page,
@@ -29,6 +30,7 @@ const components = {
   pricingheader: PricingHeader,
   pricingcards: PricingCards,
   weworkedwith_slider:  weworkedwith_slider,
+  OurTeamCaroussel: OurTeamCaroussel,
 };
 
 storyblokInit({

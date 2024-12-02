@@ -39,9 +39,6 @@ const weworkedwith_slider = ({ blok }) => (
         })}
       </div>
     </div>
-
-
-
   </div>
  
 );
