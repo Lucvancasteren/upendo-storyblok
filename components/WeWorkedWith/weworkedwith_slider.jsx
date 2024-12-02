@@ -19,7 +19,7 @@ const logos = [
 const weworkedwith_slider = ({ blok }) => (
   <div className="flex min-h-screen flex-col items-center justify-center bg-[#002626]" {...storyblokEditable(blok)}>
   
-    <h1 className="mb-8 text-4xl font-bold text-white">Infinite Logo Animation</h1>
+    <h1 className="mb-8 text-4xl font-bold text-white">We worked with</h1>
 
     <div className="w-full overflow-hidden py-12">
       {/* Eén rij met logo's */}
