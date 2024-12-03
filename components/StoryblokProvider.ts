@@ -21,6 +21,7 @@ import Servicesheader from "./Servicesheader/Servicesheader";
 import OurTeamCaroussel from "./OurTeamCaroussel/OurTeamCaroussel";
 import Training_intro from "./Training_intro/Training_intro";
 import Training_OurOptions from "./Training_OurOptions/Training_OurOptions";
+import Training_CallToAction from "./Training_CallToAction/Training_CallToAction";
 
 
 const components = {
@@ -40,6 +41,7 @@ const components = {
   OurTeamCaroussel: OurTeamCaroussel,
   Training_intro: Training_intro,
   Training_OurOptions: Training_OurOptions,
+  Training_CallToAction: Training_CallToAction,
 };
 
 storyblokInit({
