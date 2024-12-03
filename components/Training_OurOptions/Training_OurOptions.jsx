@@ -11,11 +11,11 @@ const Training_OurOptions = ({ blok }) => (
           <div className="w-[20%] ">
             <img src={blok.TrainingOption1_Image.filename} />
           </div>
-          <div className="w-[60%] ">
+          <div className="w-[55%] ">
             <p>{blok.TrainingOption1_text}</p>
           </div>
           <div className="w-[15%]  flex justify-center">
-            <button className="bg-[#F4C5FF] px-5 py-2.5 rounded-2xl">Get in Touch</button>
+            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Get in Touch</button>
           </div>
         </div>
 
@@ -23,11 +23,11 @@ const Training_OurOptions = ({ blok }) => (
           <div className="w-[20%]">
             <img src={blok.TrainingOption2_Image.filename} />
           </div>
-          <div className="w-[60%] ">
+          <div className="w-[55%] ">
             <p>{blok.TrainingOption2_text}</p>
           </div>
           <div className="w-[15%] flex justify-center">
-            <button className="bg-[#F4C5FF] px-5 py-2.5 rounded-2xl">Get in Touch</button>
+            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Get in Touch</button>
           </div>
         </div>
 
@@ -35,11 +35,11 @@ const Training_OurOptions = ({ blok }) => (
           <div className="w-[20%]">
             <img src={blok.TrainingOption3_Image.filename} />
           </div>
-          <div className="w-[60%]">
+          <div className="w-[55%]">
             <p>{blok.TrainingOption3_text}</p>
           </div>
           <div className="w-[15%] flex justify-center">
-            <button className="bg-[#F4C5FF] px-5 py-2.5 rounded-2xl">Get in Touch</button>
+            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Get in Touch</button>
           </div>
         </div>
 
@@ -47,11 +47,11 @@ const Training_OurOptions = ({ blok }) => (
           <div className="w-[20%]">
             <img src={blok.TrainingOption4_Image.filename} />
           </div>
-          <div className="w-[60%]">
+          <div className="w-[55%]">
             <p>{blok.TrainingOption4_text}</p>
           </div>
           <div className="w-[15%] flex justify-center">
-            <button className="bg-[#F4C5FF] px-5 py-2.5 rounded-2xl">Get in Touch</button>
+            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Get in Touch</button>
           </div>
         </div>
 
@@ -59,11 +59,11 @@ const Training_OurOptions = ({ blok }) => (
           <div className="w-[20%]">
             <img src={blok.TrainingOption5_Image.filename} />
           </div>
-          <div className="w-[60%]">
+          <div className="w-[55%]">
             <p>{blok.TrainingOption5_text}</p>
           </div>
           <div className="w-[15%] flex justify-center">
-            <button className="bg-[#F4C5FF] px-5 py-2.5 rounded-2xl">Get in Touch</button>
+            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Get in Touch</button>
           </div>
         </div>
       </div>
