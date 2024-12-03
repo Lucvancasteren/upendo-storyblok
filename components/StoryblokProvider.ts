@@ -19,6 +19,7 @@ import HomePag_hero from "./HomePag_hero/HomePag_hero";
 import weworkedwith_slider from "./WeWorkedWith/weworkedwith_slider"
 import Servicesheader from "./Servicesheader/Servicesheader";
 import OurTeamCaroussel from "./OurTeamCaroussel/OurTeamCaroussel";
+import Training_intro from "./Training_intro/Training_intro";
 
 
 const components = {
@@ -36,6 +37,7 @@ const components = {
   weworkedwith_slider:  weworkedwith_slider,
   Servicesheader: Servicesheader,
   OurTeamCaroussel: OurTeamCaroussel,
+  Training_intro: Training_intro,
 };
 
 storyblokInit({
