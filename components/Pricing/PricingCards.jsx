@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect, useState, useRef } from "react";
 
 // Floating Background Component
@@ -22,11 +20,11 @@ const FloatingBackground = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-[#002626] overflow-hidden z-[-1]">
+    <div className="fixed inset-0 bg-[#002626] overflow-hidden z-[-1] max-w-full">
       {shapes.map((shape) => (
         <div
           key={shape.id}
-          className={`absolute animate-float`}
+          className="absolute animate-float"
           style={{
             left: `${shape.initialX}%`,
             top: `${shape.initialY}%`,
@@ -43,7 +41,7 @@ const FloatingBackground = () => {
             />
           ) : (
             <div
-              className={`border-l-2 border-b-2 ${shape.color} opacity-30 animate-rotate`}
+              className={`border-l-2 border-b-2 ${shape.color} opacity-30`}
               style={{
                 width: `${shape.size}px`,
                 height: `${shape.size}px`,
@@ -62,11 +60,9 @@ const PricingCard = ({ blok, selected }) => {
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col w-[300px] h-[400px] relative">
-      {/* Title */}
       <div className="absolute top-2 left-2 bg-[#002626] text-white py-1 px-3 rounded-full text-sm font-bold">
         {blok.title || "Starter Plan"}
       </div>
-      {/* Price Display */}
       <h2 className="text-3xl font-bold mt-10">
         €{price} / {selected === "monthly" ? "month" : "year"}
       </h2>
@@ -139,19 +135,23 @@ const TestPage = () => {
     }
   };
 
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft = 0;
+    }
+  }, []);
+
   return (
     <>
       <FloatingBackground />
-      <div className="flex flex-col items-center justify-start min-h-screen bg-transparent p-5">
-        {/* Toggle Button */}
-        <div className="flex bg-[#D9D9D9] overflow-hidden mb-10 w-[200px] h-[40px] rounded-[20px] relative sm:w-[250px] sm:h-[50px] lg:w-[330px] lg:h-[60px]">
-          {/* Green Button */}
+      <div className="flex flex-col items-center justify-start min-h-screen bg-transparent p-5 overflow-hidden">
+        {/* Pricing Toggle */}
+        <div className="flex bg-[#D9D9D9] overflow-hidden mb-5 w-[200px] h-[40px] rounded-[20px] relative sm:w-[250px] sm:h-[50px] lg:w-[330px] lg:h-[60px]">
           <div
             className={`absolute top-1 left-1 h-[calc(100%-6px)] w-[48%] bg-[#A8FF1A] text-center rounded-[20px] transition-all duration-300 ${
               selected === "monthly" ? "left-1" : "left-[50%]"
             }`}
           ></div>
-          {/* Text Labels */}
           <div className="w-full flex justify-between items-center text-gray-700 text-center z-10">
             <button
               className="w-1/2 z-20"
@@ -168,29 +168,37 @@ const TestPage = () => {
           </div>
         </div>
 
+        {/* Cards Container */}
         <div
           ref={scrollContainerRef}
           onScroll={handleScroll}
-          className="flex gap-6 overflow-x-auto scrollbar-none w-full snap-x snap-mandatory px-6 justify-center sm:justify-start lg:justify-center"
+          className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory w-full px-6 lg:justify-center no-scrollbar"
         >
           {cards.map((card, index) => (
             <div
               key={index}
-              className="snap-center flex-shrink-0 w-[300px]"
+              className="snap-center flex-shrink-0 w-[300px] mb-5"
             >
               <PricingCard blok={card} selected={selected} />
             </div>
           ))}
         </div>
 
-        {/* Dots Indicator (hidden on desktop) */}
-        <div className="flex justify-center mt-5 sm:hidden">
+        {/* Dots Indicator */}
+        <div className="flex justify-center mt-3 sm:hidden">
           {cards.map((_, index) => (
             <div
               key={index}
-              className={`w-3 h-3 rounded-full mx-1 ${
+              className={`w-3 h-3 rounded-full mx-1 cursor-pointer ${
                 activeCard === index ? "bg-[#A8FF1A]" : "bg-gray-400"
               }`}
+              onClick={() => {
+                setActiveCard(index);
+                scrollContainerRef.current.scrollTo({
+                  left: index * scrollContainerRef.current.offsetWidth,
+                  behavior: "smooth",
+                });
+              }}
             ></div>
           ))}
         </div>
@@ -200,5 +208,3 @@ const TestPage = () => {
 };
 
 export default TestPage;
-
-
