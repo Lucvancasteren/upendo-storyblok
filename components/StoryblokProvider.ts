@@ -22,6 +22,7 @@ import OurTeamCaroussel from "./OurTeamCaroussel/OurTeamCaroussel";
 import Training_intro from "./Training_intro/Training_intro";
 import Training_OurOptions from "./Training_OurOptions/Training_OurOptions";
 import Training_CallToAction from "./Training_CallToAction/Training_CallToAction";
+import Login from "./Login/Login";
 
 
 const components = {
@@ -32,16 +33,17 @@ const components = {
   Footer: Footer,
   AboutUs_hero: AboutUs_hero,
   ourValues: ourValues,
-  CallToAction_1 : CallToAction_1,
+  CallToAction_1: CallToAction_1,
   pricingheader: PricingHeader,
   pricingcards: PricingCards,
   HomePag_hero: HomePag_hero,
-  weworkedwith_slider:  weworkedwith_slider,
+  weworkedwith_slider: weworkedwith_slider,
   Servicesheader: Servicesheader,
   OurTeamCaroussel: OurTeamCaroussel,
   Training_intro: Training_intro,
   Training_OurOptions: Training_OurOptions,
   Training_CallToAction: Training_CallToAction,
+  Login: Login,
 };
 
 storyblokInit({
