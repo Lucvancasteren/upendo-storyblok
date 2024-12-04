@@ -23,6 +23,7 @@ import Training_intro from "./Training_intro/Training_intro";
 import Training_OurOptions from "./Training_OurOptions/Training_OurOptions";
 import Training_CallToAction from "./Training_CallToAction/Training_CallToAction";
 import Login from "./Login/Login";
+import Servicesmain from "./Servicesmain/Servicesmain";
 
 
 const components = {
@@ -44,6 +45,7 @@ const components = {
   Training_OurOptions: Training_OurOptions,
   Training_CallToAction: Training_CallToAction,
   Login: Login,
+  Servicesmain: Servicesmain,
 };
 
 storyblokInit({
