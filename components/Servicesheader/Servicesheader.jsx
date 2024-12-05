@@ -9,7 +9,6 @@ const Servicesheader = ({ blok }) => {
     <div className="bg-[#002626]" {...storyblokEditable(blok)}>
       <div className="mx-auto max-w-[1220px] px-6 py-12">
         <div className="flex flex-col md:flex-row items-center gap-8">
-          {/* Tekstgedeelte */}
           <div className="md:w-1/2 text-left">
             <h3 className="text-[#F4C5FF] text-4xl mb-2">
               {blok.Servicesheader_Titel1}
@@ -22,13 +21,8 @@ const Servicesheader = ({ blok }) => {
               {blok.Servicesheader_Titel3}
             </h3>
           </div>
-          {/* Afbeeldingsgedeelte */}
           <div className="md:w-1/2 flex justify-center">
-            <img
-              src={blok.Servicesheader_Image.filename}
-              alt="Service Header"
-              className="max-w-full h-auto"
-            />
+            <img src={blok.Servicesheader_Image.filename} alt="Service Header" className="max-w-full h-auto"/>
           </div>
         </div>
       </div>
