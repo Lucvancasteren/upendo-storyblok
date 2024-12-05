@@ -7,16 +7,28 @@ const Servicesheader = ({ blok }) => {
 
   return (
     <div className="bg-[#002626]" {...storyblokEditable(blok)}>
-      <div className="container mx-auto p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="
-           pl-16">
-            <h3 className="text-[#F4C5FF] text-lg">{blok.Servicesheader_Titel1}</h3>
-            <h1 className="text-[#FFFFFF] text-2xl font-bold"> {restOfText}{" "} <span className="text-[#A8FF1A]">{lastWord}</span> </h1>
-            <h3 className="text-[#EAFFBD] text-lg">{blok.Servicesheader_Titel3}</h3>
+      <div className="mx-auto max-w-[1220px] px-6 py-12">
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          {/* Tekstgedeelte */}
+          <div className="md:w-1/2 text-left">
+            <h3 className="text-[#F4C5FF] text-4xl mb-2">
+              {blok.Servicesheader_Titel1}
+            </h3>
+            <h1 className="text-[#FFFFFF] text-6xl font-bold mb-4">
+              {restOfText}{" "}
+              <span className="text-[#A8FF1A]">{lastWord}</span>
+            </h1>
+            <h3 className="text-[#EAFFBD] text-3xl">
+              {blok.Servicesheader_Titel3}
+            </h3>
           </div>
-          <div className="flex justify-center">
-            <img src={blok.Servicesheader_Image.filename} alt="Service Header" className="max-w-full h-auto"/>
+          {/* Afbeeldingsgedeelte */}
+          <div className="md:w-1/2 flex justify-center">
+            <img
+              src={blok.Servicesheader_Image.filename}
+              alt="Service Header"
+              className="max-w-full h-auto"
+            />
           </div>
         </div>
       </div>
