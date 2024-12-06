@@ -3,31 +3,42 @@ import { storyblokEditable } from "@storyblok/react";
 
 const PricingHeader = ({ blok }) => {
   const [shapes, setShapes] = useState([]);
+  const [paddingLeft, setPaddingLeft] = useState(50); // Verhoog de standaard padding
 
-  // Generate dynamische vormen bij component-mount
   useEffect(() => {
-    const colors = ["#F4C5FF", "#A8FF1A", "#EAFFBD"]; // Kleuren voor de vormen
-    const initialShapes = Array.from({ length: 15 }, (_, i) => ({
-      id: i,
-      type: Math.random() > 0.5 ? "circle" : "angle", // Kies willekeurig tussen cirkel of hoek
-      initialX: Math.random() * 100, // Willekeurige horizontale positie
-      initialY: Math.random() * 100, // Willekeurige verticale positie
-      color: colors[Math.floor(Math.random() * colors.length)], // Willekeurige kleur
-      size: Math.random() * 10 + 5, // Willekeurige grootte
-      duration: Math.random() * 20 + 10, // Willekeurige animatieduur
-      delay: Math.random() * -30, // Willekeurige animatievertraging
-    }));
-    setShapes(initialShapes); // Update state met de gegenereerde vormen
+    const updatePadding = () => {
+      if (window.innerWidth >= 1600) {
+        setPaddingLeft(160); // Meer padding voor brede schermen
+      } else {
+        setPaddingLeft(50); // Standaard padding
+      }
+    };
+
+    updatePadding();
+    window.addEventListener("resize", updatePadding);
+    return () => window.removeEventListener("resize", updatePadding);
   }, []);
 
-  // Parse rich text inhoud
+  useEffect(() => {
+    const colors = ["#F4C5FF", "#A8FF1A", "#EAFFBD"];
+    const initialShapes = Array.from({ length: 15 }, (_, i) => ({
+      id: i,
+      type: Math.random() > 0.5 ? "circle" : "angle",
+      initialX: Math.random() * 100,
+      initialY: Math.random() * 100,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      size: Math.random() * 10 + 5,
+      duration: Math.random() * 20 + 10,
+      delay: Math.random() * -30,
+    }));
+    setShapes(initialShapes);
+  }, []);
+
   const parseRichText = (richText) => {
     if (!richText || !richText.content) return null;
 
     return richText.content.map((node, index) => {
-      if (!node.content || !Array.isArray(node.content)) {
-        return null;
-      }
+      if (!node.content || !Array.isArray(node.content)) return null;
 
       switch (node.type) {
         case "paragraph":
@@ -58,12 +69,25 @@ const PricingHeader = ({ blok }) => {
 
   return (
     <>
-      {/* Sectie met vaste hoogte, verborgen op mobiele apparaten */}
+      <style>
+        {`
+          @keyframes float {
+            0% {
+              transform: translateY(0px);
+            }
+            50% {
+              transform: translateY(-20px);
+            }
+            100% {
+              transform: translateY(0px);
+            }
+          }
+        `}
+      </style>
+
       <section className="bg-[#002626] h-[60px] hidden sm:block"></section>
 
-      {/* Hoofdsectie met achtergrond en vormen */}
       <section className="relative bg-[#002626] min-h-[600px] flex flex-col justify-start items-center px-10 pt-20 overflow-hidden">
-        {/* Dynamisch gegenereerde vormen */}
         <div className="absolute inset-0 w-full h-full overflow-hidden z-1">
           {shapes.map((shape) => (
             <div
@@ -101,14 +125,17 @@ const PricingHeader = ({ blok }) => {
           ))}
         </div>
 
-        {/* Content-wrapper met dynamische inhoud */}
         <div
           className="content-wrapper flex flex-col md:flex-row justify-between w-full"
           {...storyblokEditable(blok)}
         >
-          {/* Titel en tekstsectie */}
           <section className="relative">
-            <div className="flex-1 pl-2 sm:pl-5 z-2 relative top-[-40px] sm:top-0">
+            <div
+              className="flex-1 z-2 relative top-[-40px] sm:top-0"
+              style={{
+                paddingLeft: `${paddingLeft}px`, // Verhoogde padding
+              }}
+            >
               <h1 className="mb-4 text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-mono text-[#F4C5FF] mt-0">
                 {blok.titel || ""}
               </h1>
@@ -121,9 +148,8 @@ const PricingHeader = ({ blok }) => {
             </div>
           </section>
 
-          {/* Afbeeldingsectie */}
           {blok.assetUrl && (
-            <div className="flex-1 flex justify-center items-start md:items-end mt-6 md:mt-0">
+            <div className="flex-1 flex justify-center items-start md:items-end mt-6 md:mt-0 pl-48">
               <img
                 src={blok.assetUrl.filename}
                 alt="Afbeelding"
@@ -133,7 +159,6 @@ const PricingHeader = ({ blok }) => {
           )}
         </div>
 
-        {/* Optionele midden-tekst sectie */}
         {blok.middleText && (
           <div className="w-full text-center mt-20 text-white text-[1rem] leading-[30px]">
             {parseRichText(blok.middleText)}
@@ -145,5 +170,3 @@ const PricingHeader = ({ blok }) => {
 };
 
 export default PricingHeader;
-
- 
