@@ -15,8 +15,11 @@ const Register = ({ blok }) => {
                     </svg>
                 </button>
                 <div className="text-center text-white mb-12 max-w-lg">
+                    <h1 className="text-2xl md:text-6xl font-bold mb-2">
+                        Register to
+                    </h1>
                     <h1 className="text-2xl md:text-6xl font-bold mb-4">
-                        Register to Upendo
+                        Upendo
                     </h1>
                     <p className="text-sm md:text-xl text-[#98B5AB]">
                          the Upendo Network: Let’s Grow Your Business Together!
@@ -100,6 +103,7 @@ const Register = ({ blok }) => {
 
                         <button
                             className="w-full py-3 text-sm md:text-lg font-medium bg-gradient-to-r from-[#F8FFE5] to-[#FFC0CB] text-black hover:opacity-90 transition-opacity rounded-full"
+                            onClick={() => window.location.href = '/'}
                         >
                             Register {'>'}
                         </button>

@@ -88,7 +88,7 @@ const Login = ({ blok }) => {
 
                         <p className="text-center text-[#98B5AB] text-xs md:text-sm">
                             Don’t have an account?
-                            <a href="/signup" className="text-white ml-1 hover:underline">
+                            <a className="text-white ml-1 hover:underline" onClick={() => window.location.href = '/registration'}>
                                 Sign up
                             </a>
                         </p>
