@@ -28,7 +28,6 @@ export default function Navbar({
   const [flagSrc, setFlagSrc] = useState('/placeholder.svg'); // Fallback initialisatie
   const [searchOpen, setSearchOpen] = useState(false);
 
-  // Bijwerken van flagSrc zodra blok.flag.filename beschikbaar is
   useEffect(() => {
     if (blok.flag?.filename) {
       setFlagSrc(blok.flag.filename);
@@ -71,9 +70,7 @@ export default function Navbar({
               blok.nav_links.map((link, index) => (
                 <li
                   key={index}
-                  className={`font-light px-6 lg:px-0 lg:text-center text-left ${
-                    menuOpen ? '' : ''
-                  }`}
+                  className="font-light text-2xl px-6 lg:px-0 lg:text-center text-left"
                 >
                   <Link
                     href={link.url.url}
@@ -89,7 +86,7 @@ export default function Navbar({
               ))
             ) : (
               <>
-                <li className="font-light px-6 lg:px-0 lg:text-center text-left">
+                <li className="font-light text-2xl px-6 lg:px-0 lg:text-center text-left">
                   <Link
                     href="/about-us"
                     className="hover:text-[#F4C5FF] transition-colors duration-300"
@@ -97,7 +94,7 @@ export default function Navbar({
                     About us
                   </Link>
                 </li>
-                <li className="font-light px-6 lg:px-0 lg:text-center text-left">
+                <li className="font-light text-2xl px-6 lg:px-0 lg:text-center text-left">
                   <Link
                     href="/services"
                     className="hover:text-[#F4C5FF] transition-colors duration-300"
@@ -105,7 +102,7 @@ export default function Navbar({
                     Services
                   </Link>
                 </li>
-                <li className="font-light px-6 lg:px-0 lg:text-center text-left">
+                <li className="font-light text-2xl px-6 lg:px-0 lg:text-center text-left">
                   <Link
                     href="/pricing"
                     className="hover:text-[#F4C5FF] transition-colors duration-300"
@@ -113,7 +110,7 @@ export default function Navbar({
                     Pricing
                   </Link>
                 </li>
-                <li className="font-light px-6 lg:px-0 lg:text-center text-left">
+                <li className="font-light text-2xl px-6 lg:px-0 lg:text-center text-left">
                   <Link
                     href="/training"
                     className="hover:text-[#F4C5FF] transition-colors duration-300"
