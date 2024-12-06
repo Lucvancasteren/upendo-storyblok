@@ -16,7 +16,7 @@ const Register = ({ blok }) => {
                 </button>
                 <div className="text-center text-white mb-12 max-w-lg">
                     <h1 className="text-2xl md:text-6xl font-bold mb-4">
-                        Register with Upendo
+                        Register to Upendo
                     </h1>
                     <p className="text-sm md:text-xl text-[#98B5AB]">
                          the Upendo Network: Let’s Grow Your Business Together!
@@ -33,7 +33,7 @@ const Register = ({ blok }) => {
                     </div>
 
                     <div className="w-full md:w-5/12 flex flex-col gap-6  ">
-                        <h2 className="text-lg md:text-2xl font-bold text-white mb-1">Regsiter</h2>
+                        <h2 className="text-lg md:text-2xl font-bold text-white mb-1">Register</h2>
 
                         <div className="w-full max-w-md mb-4 flex flex-col gap-2 relative">
                             <img
