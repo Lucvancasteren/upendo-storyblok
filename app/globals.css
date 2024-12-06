@@ -13,7 +13,7 @@
     transform: translateX(-500%);
   }
   100% {
-    transform: translateX(0); 
+    transform: translateX(0);
   }
 }
 
@@ -21,3 +21,6 @@
   animation: scroll 60s linear infinite;
 }
 
+.background {
+  background-color: #002626;
+}

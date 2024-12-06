@@ -17,7 +17,11 @@ export default async function RootLayout({
   return (
     <StoryblokProvider>
       <html>
-        <body>{children}</body>
+        <body>
+          <div className="background">
+          {children}
+          </div>
+          </body>
       </html>
     </StoryblokProvider>
   );
