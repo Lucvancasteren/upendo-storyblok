@@ -1,6 +1,8 @@
 import "./globals.css";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "../components/StoryblokProvider";
+import Navbar from "@components/Navbar/Navbar";
+import Footer from "@components/Footer/Footer";
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
@@ -17,7 +19,10 @@ export default async function RootLayout({
   return (
     <StoryblokProvider>
       <html>
-        <body>{children}</body>
+        <body>
+          <div className="background">
+          {children}/</div>
+          </body>
       </html>
     </StoryblokProvider>
   );
