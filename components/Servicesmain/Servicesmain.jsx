@@ -4,7 +4,7 @@ const Servicesmain = ({ blok }) => (
   <div className="bg-[#002626] mt-8 mb-8" {...storyblokEditable(blok)}>
     <div className="w-[100%]">
       <div className="boven flex ">
-        {/*1*/}
+        {/*1.*/}
         <div className="w-[50%] bg-[#003a47]">
           <div className="bg-[#003A47] flex flex-col justify-between text-left p-10 space-y-4">
             <div className="flex justify-center">
@@ -23,7 +23,7 @@ const Servicesmain = ({ blok }) => (
             </div>
           </div>
         </div>
-        {/*2*/}
+        {/*2.*/}
         <div className="w-[50%] bg-[#002626]">
           <div className="bg-[#002626] flex flex-col justify-between text-left p-10 space-y-4">
             <div className="flex justify-center">
@@ -44,7 +44,7 @@ const Servicesmain = ({ blok }) => (
         </div>
       </div>
       <div className="onder flex">
-        {/*3*/}
+        {/*3.*/}
         <div className="w-[50%] bg-[#002626]">
           <div className="bg-[#002626] flex flex-col justify-between text-left p-10 space-y-4">
             <div className="flex justify-center">
@@ -63,7 +63,7 @@ const Servicesmain = ({ blok }) => (
             </div>
           </div>
         </div>
-        {/*4*/}
+        {/*4.*/}
         <div className="w-[50%] bg-[#003a47]">
           <div className="bg-[#003A47] flex flex-col justify-between text-left p-10 space-y-4">
             <div className="flex justify-center">
