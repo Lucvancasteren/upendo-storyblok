@@ -15,7 +15,7 @@ const Training_OurOptions = ({ blok }) => (
             <p>{blok.TrainingOption1_text}</p>
           </div>
           <div className="w-[15%]  flex justify-center">
-            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Get in Touch</button>
+            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Book now</button>
           </div>
         </div>
 
@@ -27,7 +27,7 @@ const Training_OurOptions = ({ blok }) => (
             <p>{blok.TrainingOption2_text}</p>
           </div>
           <div className="w-[15%] flex justify-center">
-            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Get in Touch</button>
+            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Book now</button>
           </div>
         </div>
 
@@ -39,7 +39,7 @@ const Training_OurOptions = ({ blok }) => (
             <p>{blok.TrainingOption3_text}</p>
           </div>
           <div className="w-[15%] flex justify-center">
-            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Get in Touch</button>
+            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Book now</button>
           </div>
         </div>
 
@@ -51,7 +51,7 @@ const Training_OurOptions = ({ blok }) => (
             <p>{blok.TrainingOption4_text}</p>
           </div>
           <div className="w-[15%] flex justify-center">
-            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Get in Touch</button>
+            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Book now</button>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ const Training_OurOptions = ({ blok }) => (
             <p>{blok.TrainingOption5_text}</p>
           </div>
           <div className="w-[15%] flex justify-center">
-            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Get in Touch</button>
+            <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">Book now</button>
           </div>
         </div>
       </div>
