@@ -27,6 +27,7 @@ import Register from "./Register/Register";
 import Servicesmain from "./Servicesmain/Servicesmain";
 import Contact_Formulier from "./Contact_Formulier/Contact_Formulier";
 import TrainingPlanner from "./TrainingPlanner/TrainingPlanner";
+import Contact_intro from "./Contact_intro/Contact_intro";
 
 const components = {
   page: Page,
@@ -51,6 +52,7 @@ const components = {
   Contact_Formulier: Contact_Formulier,
   TrainingPlanner: TrainingPlanner,
   Register: Register,
+  Contact_intro: Contact_intro,
 };
 
 storyblokInit({
