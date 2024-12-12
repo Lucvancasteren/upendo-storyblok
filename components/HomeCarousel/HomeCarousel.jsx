@@ -52,37 +52,6 @@ const ServicesCarousel = ({ blok }) => {
     },
   ];
 
-  useEffect(() => {
-    const handleTouchStart = (e) => {
-      const touchStartX = e.touches[0].clientX;
-      carouselRef.current.setAttribute("data-touch-start", touchStartX);
-    };
-
-    const handleTouchMove = (e) => {
-      if (!carouselRef.current) return;
-      const touchStartX = parseFloat(
-        carouselRef.current.getAttribute("data-touch-start")
-      );
-      const touchEndX = e.touches[0].clientX;
-      const touchDiff = touchStartX - touchEndX;
-
-      if (touchDiff > 50) {
-        nextSlide();
-      } else if (touchDiff < -50) {
-        prevSlide();
-      }
-    };
-
-    const carouselElement = carouselRef.current;
-    carouselElement.addEventListener("touchstart", handleTouchStart);
-    carouselElement.addEventListener("touchmove", handleTouchMove);
-
-    return () => {
-      carouselElement.removeEventListener("touchstart", handleTouchStart);
-      carouselElement.removeEventListener("touchmove", handleTouchMove);
-    };
-  }, []);
-
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
   };
@@ -120,40 +89,48 @@ const ServicesCarousel = ({ blok }) => {
         </h2>
 
         {/* Carousel */}
-        <div
-          ref={carouselRef}
-          className="flex overflow-x-scroll scrollbar-hide snap-x snap-mandatory"
-        >
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-full snap-center p-4 md:flex md:items-center"
-            >
-              <div className="relative w-full md:w-1/2 aspect-[4/3] rounded-3xl overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  width={400}
-                  height={300}
-                  className="object-cover rounded-3xl"
-                />
+        <div className="overflow-hidden relative">
+          <div
+            className="flex transition-transform ease-in-out duration-500"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+              width: "100%",
+            }}
+          >
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="w-full flex-shrink-0"
+                style={{ width: "100%" }}
+              >
+                <div className="flex flex-col md:flex-row md:items-center">
+                  <div className="relative w-full md:w-1/2 aspect-[4/3] rounded-3xl overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={400}
+                      height={300}
+                      className="object-cover rounded-3xl"
+                    />
+                  </div>
+                  <div className="text-white text-center md:text-left mt-4 md:mt-0 md:w-1/2 md:pl-8">
+                    <h3 className="text-[36px] font-bold font-['Martial Mono'] mb-2 text-[#EAFFBD]">
+                      {service.title}
+                    </h3>
+                    <p className="text-[15px] font-bold font-['Area Normal'] mb-4 text-[#FEFFF8]">
+                      {service.description}
+                    </p>
+                    <a
+                      href={service.button_link?.url}
+                      className="bg-[#F4C5FF] text-black text-[15px] font-bold font-['Area Normal'] px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-md inline-block"
+                    >
+                      {service.button_text}
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div className="text-white text-left mt-4 md:mt-0 md:w-1/2 md:pl-8">
-                <h3 className="text-[36px] font-bold font-['Martial Mono'] mb-2 text-[#EAFFBD]">
-                  {service.title}
-                </h3>
-                <p className="text-[15px] font-bold font-['Area Normal'] mb-4 text-[#FEFFF8]">
-                  {service.description}
-                </p>
-                <a
-                  href={service.button_link?.url}
-                  className="bg-[#F4C5FF] text-black text-[15px] font-bold font-['Area Normal'] px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-md inline-block"
-                >
-                  {service.button_text}
-                </a>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <button
