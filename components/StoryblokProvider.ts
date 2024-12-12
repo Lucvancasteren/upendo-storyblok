@@ -30,6 +30,7 @@ import TrainingPlanner from "./TrainingPlanner/TrainingPlanner";
 import Contact_intro from "./Contact_intro/Contact_intro";
 import Configurationheader from "./Configurationheader/Configurationheader";
 import HomeCarousel from "./HomeCarousel/HomeCarousel";
+import RotatingImages from "./Rotatingimages/Rotatingimages";
 
 const components = {
   page: Page,
@@ -57,6 +58,7 @@ const components = {
   Contact_intro: Contact_intro,
   Configurationheader: Configurationheader,
   HomeCarousel: HomeCarousel,
+  RotatingImages: RotatingImages,
 };
 
 storyblokInit({

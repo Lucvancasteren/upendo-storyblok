@@ -1,8 +1,9 @@
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,jsx,ts,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,jsx,ts,tsx}',
   ],
   corePlugins: {
     aspectRatio: false,
@@ -10,19 +11,17 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        float: "float 6s ease-in-out infinite",
-        rotate: "rotate 3s linear infinite",
+        'move-line': 'move-line 20s linear infinite',
+        'move-line-slow': 'move-line 30s linear infinite',
+        'move-line-fast': 'move-line 10s linear infinite',
       },
       keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
-        rotate: {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" },
+        'move-line': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },
   },
-};
+  plugins: [],
+}
