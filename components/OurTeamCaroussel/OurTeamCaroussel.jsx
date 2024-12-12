@@ -45,8 +45,8 @@ const OurTeamCarousel = ({ blok }) => {
   const visibleImages = images.slice(currentIndex, currentIndex + 3)
 
   return (
-    <div className="mt-10 flex flex-col items-center justify-center bg-[#002626]" {...storyblokEditable(blok)}>
-      <h1 className="mb-8 text-4xl font-bold text-white">Our Team</h1>
+    <div className="mt-20 flex flex-col items-center justify-center bg-[#002626]" {...storyblokEditable(blok)}>
+      <h1 className="mb-10 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EAFFBD] to-[#F4C5FF]">Our Team</h1>
 
       {/* Carousel */}
       <div className="w-full max-w-7xl mx-auto px-4 flex flex-col items-center">
