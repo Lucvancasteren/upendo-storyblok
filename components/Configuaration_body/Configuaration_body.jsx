@@ -5,7 +5,7 @@ import { render } from "storyblok-rich-text-react-renderer";
 
 const Configuaration_body = ({ blok }) => (
   <div {...storyblokEditable(blok)}>
-    <div className="flex justify-center items-center bg-[#003A47] rounded-3xl">
+    <div className="flex justify-center items-center bg-[#003A47] rounded-3xl mt-20">
       <div className="text-white w-[37%]"style={{
                 fontFamily: "Area, sans-serif",
                 fontWeight: "500",
