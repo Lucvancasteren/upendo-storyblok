@@ -3,7 +3,7 @@ import { render } from "storyblok-rich-text-react-renderer";
 
 
 const CallToAction_1 = ({ blok }) => (
-  <div className="bg-[#002626] flex justify-center"{...storyblokEditable(blok)}>
+  <div className="mb-20 bg-[#002626] flex justify-center"{...storyblokEditable(blok)}>
     <div className=" flex justify-between w-[85%] mt-25">
       <img src={blok.calltoaction_image.filename}/>
 

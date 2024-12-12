@@ -22,7 +22,7 @@ const OurValues = ({ blok }) => {
 
   return (
     <div
-      className="bg-[#002626] bg-cover bg-center h-[600px] flex items-center"
+      className=" mt-10 bg-[#002626] bg-cover bg-center h-[600px] flex items-center"
       style={{ backgroundImage: `url(${blok.ourValues_achtergrond.filename})` }}
       {...storyblokEditable(blok)}
     >
