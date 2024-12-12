@@ -29,6 +29,7 @@ import Contact_Formulier from "./Contact_Formulier/Contact_Formulier";
 import TrainingPlanner from "./TrainingPlanner/TrainingPlanner";
 import Contact_intro from "./Contact_intro/Contact_intro";
 import Configurationheader from "./Configurationheader/Configurationheader";
+import HomeCarousel from "./HomeCarousel/HomeCarousel";
 
 const components = {
   page: Page,
@@ -55,6 +56,7 @@ const components = {
   Register: Register,
   Contact_intro: Contact_intro,
   Configurationheader: Configurationheader,
+  HomeCarousel: HomeCarousel,
 };
 
 storyblokInit({
