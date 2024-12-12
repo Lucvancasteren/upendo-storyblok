@@ -3,7 +3,7 @@ import { render } from "storyblok-rich-text-react-renderer";
  
 const AboutUs_hero = ({ blok }) => (
   <div className="bg-[#002626]" {...storyblokEditable(blok)}>
-    <div className="flex justify-center text-4xl">
+    <div className="mt-10 flex justify-center text-4xl">
       {render(blok.AboutUs_titel)}  
     </div>
 
