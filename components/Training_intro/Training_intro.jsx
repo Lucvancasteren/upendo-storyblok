@@ -3,7 +3,7 @@ import { render } from "storyblok-rich-text-react-renderer";
  
 const Training_intro = ({ blok }) => (
   <div className="bg-[#002626]" {...storyblokEditable(blok)}>
-    <div className="container flex justify-around mt-10 ">
+    <div className="flex justify-around mt-10 ">
       <div className="flex flex-col justify-center">
         <div>
           <h1 className="text-[#F4C5FF] mb-2"  style={{
@@ -32,7 +32,7 @@ const Training_intro = ({ blok }) => (
       </div>
     </div>
 
-    <div className="container flex justify-center mt-20 ">
+    <div className="flex justify-center mt-20 ">
       <div className="flex justify-between  w-[80%]">
         <div>
           <img className="w-[475px]" src={blok.Training_introafbeelding2.filename} />
