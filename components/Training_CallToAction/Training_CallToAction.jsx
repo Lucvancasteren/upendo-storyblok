@@ -2,7 +2,7 @@ import { storyblokEditable } from "@storyblok/react/rsc";
 import { render } from "storyblok-rich-text-react-renderer";
  
 const Training_CallToAction = ({ blok }) => (
-  <div className="bg-[#002626] flex justify-center mt-10" {...storyblokEditable(blok)}>
+  <div className="bg-[#002626] flex justify-center mt-20 mb-20" {...storyblokEditable(blok)}>
     <div className="w-[60%]">
       <div>
         <h1 className="text-white" style={{
@@ -13,7 +13,7 @@ const Training_CallToAction = ({ blok }) => (
       </div>
       <div>
         <input
-          className="w-full bg-transparent border-2 p-2 border-[#A8FF1A] rounded-2xl text-white placeholder-gray-400 mt-5"
+          className="w-full bg-transparent border-2 p-3 border-[#A8FF1A] rounded-3xl text-white placeholder-gray-400 mt-5"
           type="text"
           placeholder="Leave a message here..."
         />

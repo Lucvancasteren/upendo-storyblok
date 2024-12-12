@@ -3,7 +3,7 @@ import { render } from "storyblok-rich-text-react-renderer";
  
 const Training_OurOptions = ({ blok }) => (
   <div className="bg-[#002626] mt-20" {...storyblokEditable(blok)}>
-    <h1 className="mb-8 text-4xl font-bold text-white flex justify-center">Our Options</h1>
+    <h1 className="mb-10 text-5xl font-bold text-white flex justify-center ">Our Options</h1>
     <div className="container flex justify-center">
       <div className="flex flex-col justify-around h-[700px] bg-[#EAFFBD] w-[80%] p-5 rounded-3xl">
 
