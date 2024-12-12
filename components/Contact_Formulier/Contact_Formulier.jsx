@@ -72,7 +72,7 @@ const Contact_Formulier = ({ blok }) => (
                   </textarea>
               </div>
 
-              <div className="flex justify-end mt-5 w-[70%]">
+              <div className="flex justify-end mt-5 mb-10 w-[70%]">
                 <button className="bg-[#F4C5FF] px-6 py-2 rounded-2xl">Submit</button>
               </div>
         </div>
