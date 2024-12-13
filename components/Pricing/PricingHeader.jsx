@@ -19,20 +19,20 @@ const PricingHeader = ({ blok }) => {
     return () => window.removeEventListener("resize", updatePadding);
   }, []);
 
-  useEffect(() => {
-    const colors = ["#F4C5FF", "#A8FF1A", "#EAFFBD"];
-    const initialShapes = Array.from({ length: 15 }, (_, i) => ({
-      id: i,
-      type: Math.random() > 0.5 ? "circle" : "angle",
-      initialX: Math.random() * 100,
-      initialY: Math.random() * 100,
-      color: colors[Math.floor(Math.random() * colors.length)],
-      size: Math.random() * 10 + 5,
-      duration: Math.random() * 20 + 10,
-      delay: Math.random() * -30,
-    }));
-    setShapes(initialShapes);
-  }, []);
+  // useEffect(() => {
+  //   const colors = ["#F4C5FF", "#A8FF1A", "#EAFFBD"];
+  //   const initialShapes = Array.from({ length: 15 }, (_, i) => ({
+  //     id: i,
+  //     type: Math.random() > 0.5 ? "circle" : "angle",
+  //     initialX: Math.random() * 100,
+  //     initialY: Math.random() * 100,
+  //     color: colors[Math.floor(Math.random() * colors.length)],
+  //     size: Math.random() * 10 + 5,
+  //     duration: Math.random() * 20 + 10,
+  //     delay: Math.random() * -30,
+  //   }));
+  //   setShapes(initialShapes);
+  // }, []);
 
   const parseRichText = (richText) => {
     if (!richText || !richText.content) return null;
