@@ -4,7 +4,7 @@ import { render } from "storyblok-rich-text-react-renderer";
  
 const Contact_Formulier = ({ blok }) => (
   <div className="bg-[#002626] mb-20" {...storyblokEditable(blok)}>
-     <div className="container flex justify-center">
+     <div className="flex justify-center">
       <div className="flex flex-col justify-around bg-[#003A47] w-[80%] p-5 rounded-3xl">
         <h1 className="mb-8 text-6xl font-bold text-white flex justify-center">Contact us</h1>
 

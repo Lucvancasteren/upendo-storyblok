@@ -30,7 +30,9 @@ import TrainingPlanner from "./TrainingPlanner/TrainingPlanner";
 import Contact_intro from "./Contact_intro/Contact_intro";
 import Configurationheader from "./Configurationheader/Configurationheader";
 import HomeCarousel from "./HomeCarousel/HomeCarousel";
-import RotatingImages from "./Rotatingimages/Rotatingimages";
+import Configuaration_body from "./Configuaration_body/Configuaration_body";
+import Configuaration_CTA from "./Configuaration_CTA/Configuaration_CTA";
+import RotatingImages from "./RotatingImages/RotatingImages";
 
 const components = {
   page: Page,
@@ -58,6 +60,8 @@ const components = {
   Contact_intro: Contact_intro,
   Configurationheader: Configurationheader,
   HomeCarousel: HomeCarousel,
+  Configuaration_body: Configuaration_body,
+  Configuaration_CTA: Configuaration_CTA,
   RotatingImages: RotatingImages,
 };
 

@@ -4,7 +4,7 @@ import { render } from "storyblok-rich-text-react-renderer";
  
 const Contact_intro = ({ blok }) => (
   <div className="bg-[#002626] mb-20" {...storyblokEditable(blok)}>
-    <div className="container flex justify-around mt-10 ">
+    <div className="flex justify-around mt-10 ">
       <div className="flex flex-col justify-center w-[40%]">
         <div>
           <h1 className="text-[#F4C5FF] mb-2"  style={{
