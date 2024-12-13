@@ -27,9 +27,11 @@ const Servicesmain = ({ blok }) => (
                 </p>
               </div>
               <div className="flex justify-start w-[70%] mt-4">
-                <button className="bg-[#F4C5FF] px-6 py-2 rounded-2xl">
-                  Discover
-                </button>
+                <Link href="/configuration" passHref>
+                  <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">
+                    Discover
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -89,9 +91,11 @@ const Servicesmain = ({ blok }) => (
                 </p>
               </div>
               <div className="flex justify-start w-[70%] mt-4">
-                <button className="bg-[#F4C5FF] px-6 py-2 rounded-2xl">
-                  Discover
-                </button>
+                <Link href="/configuration" passHref>
+                  <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">
+                    Discover
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -118,9 +122,11 @@ const Servicesmain = ({ blok }) => (
                 </p>
               </div>
               <div className="flex justify-start w-[70%] mt-4">
-                <button className="bg-[#F4C5FF] px-6 py-2 rounded-2xl">
-                  Discover
-                </button>
+                <Link href="/configuration" passHref>
+                  <button className="bg-[#F4C5FF] px-6 py-2.5 rounded-2xl">
+                    Discover
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
