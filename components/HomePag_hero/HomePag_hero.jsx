@@ -1,5 +1,6 @@
 import React from "react";
 import { storyblokEditable } from "@storyblok/react";
+import Link from "next/link";
 
 const HomePag_hero = ({ blok }) => {
   return (
@@ -30,8 +31,8 @@ const HomePag_hero = ({ blok }) => {
                 fontSize: "64px",
               }}
             >
-              Visualize your data, <br />
-              seamlessly,
+              Visualize your <span className="text-white">data,</span> <br />
+              <span className="text-white">seamlessly,</span>
             </h1>
 
             <p
@@ -44,20 +45,20 @@ const HomePag_hero = ({ blok }) => {
             >
               Your Guide to Accessible and Impactful Data
             </p>
-
-            <button
-              className="w-[180px] h-[52px] bg-[#F4C5FF] text-[#002626] font-bold rounded hover:bg-[#EAFFBD] flex justify-center items-center gap-2 px-4"
-              style={{ fontFamily: "Martian Mono, monospace" }}
-            >
-              <span>Get started</span>
-
-              <span className="text-[#002626]">&gt;</span>
-            </button>
+            <Link href="/services" passHref>
+              <button
+                className="w-[180px] h-[52px] bg-[#F4C5FF] text-[#002626] font-bold rounded hover:bg-[#EAFFBD] flex justify-center items-center gap-2 px-4"
+                style={{ fontFamily: "Martian Mono, monospace" }}
+              >
+                <span>Get started</span>
+                <span className="text-[#002626]">&gt;</span>
+              </button>
+            </Link>
           </div>
 
           {/* Right Section: Main Image */}
           {blok.hero_image && (
-            <div className="flex-1 flex justify-end items-start  pr-10">
+            <div className="flex-1 flex justify-end items-start pr-10">
               <img
                 src={blok.hero_image.filename}
                 alt="Hero Image"
