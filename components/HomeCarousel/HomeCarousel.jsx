@@ -16,7 +16,7 @@ const ServicesCarousel = ({ blok }) => {
       description:
         "Configure your system settings and preferences with ease. This service allows you to have full control over system adjustments, ensuring optimal performance and customization.",
       button_text: "Learn More",
-      button_link: { url: "/services/configuration" },
+      button_link: { url: "/configuration" },
     },
     {
       image: "/images/Optimalisation.svg",
@@ -24,7 +24,7 @@ const ServicesCarousel = ({ blok }) => {
       description:
         "Boost your system’s performance to achieve better results. With advanced optimization techniques, your system will run faster and more efficiently.",
       button_text: "Get Started",
-      button_link: { url: "/services/optimalisation" },
+      button_link: { url: "/configuration" },
     },
     {
       image: "/images/Visualisation.svg",
@@ -32,7 +32,7 @@ const ServicesCarousel = ({ blok }) => {
       description:
         "Visualize your data for better decision making. Our visualization tools provide insights at a glance, making data analysis more intuitive and actionable.",
       button_text: "See Examples",
-      button_link: { url: "/services/visualisation" },
+      button_link: { url: "/configuration" },
     },
     {
       image: "/images/Analysis.svg",
@@ -40,7 +40,7 @@ const ServicesCarousel = ({ blok }) => {
       description:
         "Perform detailed analysis for deeper insights. Our analytical tools give you the power to explore your data with precision and depth.",
       button_text: "Analyze Now",
-      button_link: { url: "/services/analysis" },
+      button_link: { url: "/configuration" },
     },
     {
       image: "/images/Training.svg",
@@ -48,7 +48,7 @@ const ServicesCarousel = ({ blok }) => {
       description:
         "Learn how to use our tools with in-depth training. Our training programs ensure you have the knowledge and skills to leverage our services effectively.",
       button_text: "Join Training",
-      button_link: { url: "/services/training" },
+      button_link: { url: "/configuration" },
     },
   ];
 

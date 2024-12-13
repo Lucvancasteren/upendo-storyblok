@@ -50,6 +50,7 @@ const HomePag_hero = ({ blok }) => {
               style={{ fontFamily: "Martian Mono, monospace" }}
             >
               <span>Get started</span>
+
               <span className="text-[#002626]">&gt;</span>
             </button>
           </div>
