@@ -33,6 +33,7 @@ import HomeCarousel from "./HomeCarousel/HomeCarousel";
 import Configuaration_body from "./Configuaration_body/Configuaration_body";
 import Configuaration_CTA from "./Configuaration_CTA/Configuaration_CTA";
 import RotatingImages from "./RotatingImages/RotatingImages";
+import Home_reviews from "./Home_reviews/Home_reviews";
 
 const components = {
   page: Page,
@@ -63,6 +64,7 @@ const components = {
   Configuaration_body: Configuaration_body,
   Configuaration_CTA: Configuaration_CTA,
   RotatingImages: RotatingImages,
+  Home_reviews: Home_reviews,
 };
 
 storyblokInit({
