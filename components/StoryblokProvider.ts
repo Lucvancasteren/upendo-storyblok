@@ -32,7 +32,7 @@ import Configurationheader from "./Configurationheader/Configurationheader";
 import HomeCarousel from "./HomeCarousel/HomeCarousel";
 import Configuaration_body from "./Configuaration_body/Configuaration_body";
 import Configuaration_CTA from "./Configuaration_CTA/Configuaration_CTA";
-import RotatingImages from "./RotatingImages/RotatingImages";
+import RotatingImages from "./Rotatingimages/Rotatingimages";
 import Home_reviews from "./Home_reviews/Home_reviews";
 
 const components = {
